@@ -27,13 +27,17 @@ TRT_LOGGER = trt.Logger(trt.Logger.WARNING)
 
 
 def recv_exact(sock, size):
-    data = b""
+    data = bytearray()
+
     while len(data) < size:
         chunk = sock.recv(size - len(data))
+
         if not chunk:
             raise ConnectionError("Connection closed")
-        data += chunk
-    return data
+
+        data.extend(chunk)
+
+    return bytes(data)
 
 
 def load_engine(path):
