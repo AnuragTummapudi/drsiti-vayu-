@@ -1,0 +1,13 @@
+train: ../train/images
+val: ../valid/images
+test: ../test/images
+
+nc: 11
+names: ['company', 'dump_truck', 'dumping_soil', 'dust', 'empty_load', 'front_number', 'full_load', 'mining truck', 'mining_truck', 'tail_number', 'truck_size']
+
+roboflow:
+  workspace: tappithak
+  project: detection-mining-truck-v.1
+  version: 5
+  license: MIT
+  url: https://universe.roboflow.com/tappithak/detection-mining-truck-v.1/dataset/5
